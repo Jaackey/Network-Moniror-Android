@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">TrafficMaster</string>
+
+    <string name="title">Traffic Monitor</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_detail">DetailActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_float">FloatActivity</string>
+    <string name="title_activity_csv">CSVActivity</string>
+
+    <string name="csv_error">csv service error!</string>
+</resources>

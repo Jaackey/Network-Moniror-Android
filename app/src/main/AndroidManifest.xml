@@ -1,0 +1,70 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.jackey.trafficmaster" >
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DetailActivity"
+             >
+            <intent-filter>
+                <action android:name="android.intent.action.DETAIL_START" />
+
+                <category android:name="android.intent.category.DETAIL_CATEGORY" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".FloatActivity"
+             >
+            <intent-filter>
+                <action android:name="android.intent.action.FLOAT_START" />
+
+                <category android:name="android.intent.category.FLOAT_CATEGORY" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".csvmaster.AlarmReceiver" />
+
+        <receiver android:name=".csvmaster.BootReceiver"
+            android:enabled="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".floatmaster.FloatWindowService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
+
+        <activity
+            android:name=".CSVActivity" />
+
+
+
+        <service
+            android:name=".csvmaster.CSVService" >
+        </service>
+    </application>
+
+</manifest>
+
